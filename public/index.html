@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suchankowie — svatební aplikace</title>
+  <meta name="description" content="Stáhněte si svatební aplikaci Suchankowie pro Android." />
+
+  <!-- Open Graph (pro náhled při sdílení) -->
+  <meta property="og:title" content="Suchankowie — svatební aplikace" />
+  <meta property="og:description" content="Stáhněte si naši svatební aplikaci pro Android." />
+  <meta property="og:image" content="/icon.png" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" type="image/png" href="/icon.png" />
+  <link rel="apple-touch-icon" href="/icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:        #f3f1e7;   /* warm cream backdrop */
+      --paper:     #faf8f0;   /* card surface */
+      --sage:      #9aa97e;   /* app sage green */
+      --sage-deep: #76855c;
+      --ink:       #34382c;   /* deep olive ink */
+      --muted:     #6f7560;
+      --accent:    #b35a3a;   /* warm rust */
+      --line:      #e2dfd0;
+      --font-display: 'Newsreader', Georgia, serif;
+      --font-mono:    'IBM Plex Mono', ui-monospace, Menlo, monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: var(--font-display);
+      color: var(--ink);
+      background:
+        radial-gradient(120% 90% at 50% -10%, rgba(154,169,126,.18), transparent 60%),
+        var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 20px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 40px 32px 32px;
+      text-align: center;
+      box-shadow:
+        0 1px 0 rgba(255,255,255,.7) inset,
+        0 24px 60px -24px rgba(52,56,44,.35);
+    }
+
+    .logo {
+      width: 132px;
+      height: 132px;
+      margin: 0 auto 24px;
+      border-radius: 30px;
+      display: block;
+      box-shadow: 0 14px 34px -12px rgba(118,133,92,.65);
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--sage-deep);
+      margin: 0 0 10px;
+    }
+
+    h1 {
+      font-size: 38px;
+      font-weight: 500;
+      letter-spacing: -.01em;
+      margin: 0 0 8px;
+      line-height: 1.05;
+    }
+
+    .subtitle {
+      font-size: 17px;
+      color: var(--muted);
+      margin: 0 0 28px;
+      line-height: 1.45;
+    }
+
+    .download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      padding: 17px 24px;
+      background: var(--sage);
+      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: .02em;
+      text-decoration: none;
+      border-radius: 16px;
+      transition: transform .12s ease, background .2s ease, box-shadow .2s ease;
+      box-shadow: 0 10px 24px -10px rgba(118,133,92,.8);
+    }
+    .download:hover { background: var(--sage-deep); transform: translateY(-1px); }
+    .download:active { transform: translateY(0); }
+    .download svg { flex: 0 0 auto; }
+
+    .meta {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      color: var(--muted);
+      margin: 14px 0 0;
+      letter-spacing: .02em;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--line);
+      margin: 28px 0 20px;
+    }
+
+    .steps {
+      text-align: left;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: step;
+    }
+    .steps li {
+      counter-increment: step;
+      position: relative;
+      padding: 0 0 14px 38px;
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .steps li:last-child { padding-bottom: 0; }
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 26px;
+      height: 26px;
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+    .steps strong { color: var(--ink); font-weight: 500; }
+
+    .footer {
+      margin: 26px 0 0;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--sage-deep);
+      opacity: .8;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <img class="logo" src="/icon.png" alt="Logo aplikace Suchankowie" width="132" height="132" />
+
+    <p class="eyebrow">Svatební aplikace</p>
+    <h1>Suchankowie</h1>
+    <p class="subtitle">Naše svatba ve tvém telefonu — program, mapa a vše na jednom místě.</p>
+
+    <a class="download" href="/svatebni.apk" download="suchankowie.apk">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 3v12" />
+        <path d="m7 11 5 5 5-5" />
+        <path d="M5 21h14" />
+      </svg>
+      Stáhnout pro Android
+    </a>
+    <p class="meta">.apk&nbsp;·&nbsp;23&nbsp;MB&nbsp;·&nbsp;verze 1.0</p>
+
+    <div class="divider"></div>
+
+    <ol class="steps">
+      <li>Klikni na <strong>Stáhnout</strong> a soubor ulož do telefonu.</li>
+      <li>Otevři stažený soubor — Android se zeptá na <strong>povolení instalace</strong> z tohoto zdroje, potvrď ho.</li>
+      <li>Dokonči instalaci a aplikaci <strong>Suchankowie</strong> najdeš mezi appkami. 💍</li>
+    </ol>
+
+    <p class="footer">svatba.ff0000.cz</p>
+  </main>
+</body>
+</html>
